@@ -51,3 +51,21 @@ Command:
 Source:
 https://www.youtube.com/watch?v=IW8THSS_sWE
 
+
+
+/*-----------------------UPLOAD LOCAL FILES WITH COMMAND TO GITHUB REPOSITORY--------------------*/
+Steps:
+-------
+1. git init
+2. git remote add origin https://github.com/acmstha/hello.git
+3. git pull origin master
+4. git commit -m "add test.txt"
+5. git push origin master
+
+Source:
+https://www.youtube.com/watch?v=h1e8oC7g0
+
+
+/*-----------------------DOWNLOAD FROM GIT TO LOCAL-----------------------*/
+git clone https://github.com/your/repository
+
