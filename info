@@ -43,8 +43,11 @@ https://code.visualstudio.com/docs/editor/integrated-terminal
 
 
 
-/*---------------UPLOAD PROJECT FILES FROM VDCODE TO GIT------------------*/
+/*---------------UPLOAD PROJECT FILES FROM VSCODE TO GIT------------------*/
 Command:
 1. git remote add origin https://github.com/acmstha/repositoryname.git
 2. git -u push origin master
+
+Source:
+https://www.youtube.com/watch?v=IW8THSS_sWE
 
