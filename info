@@ -2,7 +2,7 @@ This is general information about the setup for projects.
 
 
 /*-----------SETUP GIT IN VSCODE-------------*/
-0:39 Step 1 : Install git on your system
+0:39 Step 1 : Install git (SCM) on your system
 2:46 Step 2 : Create account on github - https://github.com/
 3:27 Step 3 : Create a repository on github & copy url
 4:25 Step 4 : Goto VS Code and open project/folder
@@ -20,6 +20,7 @@ Youtube: https://www.youtube.com/watch?v=Fk12ELJ9Bww
 VS Code Site: https://code.visualstudio.com/docs/editor/versioncontrol
 
 
+
 /*-----------CHANGING EMAIL/USERNAME FOR GIT FOR VS Code---------*/
 Open CMD prompt, by default git is installed under C:\Program Files\Git\bin. cd to the location and run below command.
 cd C:\Program Files\Git\bin
@@ -29,3 +30,21 @@ git config --global user.name "Your Name"
 
 Source:
 http://vcloud-lab.com/entries/powershell/solved-visual-studio-code-make-sure-you-configure-your-user-name-and-user-email-in-git
+
+
+
+/*--------------ADD GIT BASH IN TERMINAL---------------*/
+1. Go to Settings > Users > Features > Terminal
+2. Edit in settings.json
+3. Add the path : "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+
+Source:
+https://code.visualstudio.com/docs/editor/integrated-terminal
+
+
+
+/*---------------UPLOAD PROJECT FILES FROM VDCODE TO GIT------------------*/
+Command:
+1. git remote add origin https://github.com/acmstha/repositoryname.git
+2. git -u push origin master
+
