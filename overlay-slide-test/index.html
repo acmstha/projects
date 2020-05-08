@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Overlay Slide Test</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>-->
+</head>
+
+<body>
+    <div id="overlay">
+        <div id="close-menu">x</div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <nav id="open-menu">Menu</nav>
+    </div>
+
+    <script>
+        /*$(document).ready(function(){
+             $("#open-menu").click(function(){
+             //alert("The paragraph was clicked.");
+             $("#overlay").addClass("show-menu");
+             });
+        });*/
+
+
+        var overlay = document.getElementById("overlay");
+        var closeMenu = document.getElementById("close-menu");
+
+        document.getElementById("open-menu").addEventListener("click", function () {
+            //alert("Hello!");
+            overlay.classList.add("show-menu");
+        });
+        closeMenu.addEventListener("click", function () {
+            //alert("Hello!");
+            overlay.classList.remove("show-menu");
+        });
+
+    </script>
+</body>
+
+</html>
