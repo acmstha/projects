@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <title>Overlay Slide Test</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,600,700,800,900&display=swap" rel="stylesheet">
     <!--<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
   crossorigin="anonymous"></script>-->
 </head>
@@ -14,14 +14,20 @@
         <div id="close-menu">x</div>
         <div class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Home</a><br><span>welcome</span></li>
+                <li><a href="#">About</a><br><span>breif intro</span></li>
+                <li><a href="#">Contact</a><br><span>get in touch</span></li>
             </ul>
         </div>
     </div>
     <div class="wrapper">
-        <nav id="open-menu">Menu</nav>
+        <nav id="open-menu">
+            <svg width="25" height="22">
+                <path d="M0, 5, 30, 5" stroke="#fff" stroke-width="2"/>
+                <path d="M0, 12, 30, 12" stroke="#fff" stroke-width="2"/>
+                <path d="M0, 19, 30, 19" stroke="#fff" stroke-width="2"/>
+            </svg>
+        </nav>
     </div>
 
     <script>
@@ -38,11 +44,14 @@
 
         document.getElementById("open-menu").addEventListener("click", function () {
             //alert("Hello!");
-            overlay.classList.add("show-menu");
+            if (overlay.classList.contains('hide-menu')) {
+                overlay.classList.remove("hide-menu");
+            }
+            overlay.classList.add("show-menu");            
         });
-        closeMenu.addEventListener("click", function () {
-            //alert("Hello!");
-            overlay.classList.remove("show-menu");
+        closeMenu.addEventListener("click", function () {                       
+            //overlay.classList.add("hide-menu");            
+            overlay.classList.add("hide-menu");
         });
 
     </script>
