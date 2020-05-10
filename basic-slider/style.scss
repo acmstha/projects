@@ -1,0 +1,150 @@
+
+
+body{
+  margin:0;
+  padding: 0;
+  font-family: "Poppins";
+  font-weight: 200;
+  &:-webkit-scrollbar {  
+    width: 0.5em;
+  }
+  &:-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &:-webkit-scrollbar-thumb {
+    background-color: #424242;
+    outline: 1px solid slategrey;
+  }
+}
+
+#slider{
+  width:100%;
+  height:100vh;
+  position: relative;
+  background: #fff;
+}
+.slide{
+  display: flex;
+  /*position: absolute;*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height:100vh;
+  width: 100;
+  span {
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+
+.slide1{
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.slide2{
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);  
+}
+.slide3{
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);  
+}
+
+
+.showSlide {
+    animation: fadeIn 2s ease-in-out;
+    display: flex !important;
+}
+
+.hideSlide {
+    animation: fadeOut 2s ease-in-out;
+    display: none;
+}
+
+@keyframes fadeIn{
+    from {        
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeOut{
+    from {        
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+
+#prev, #next{
+  position: absolute;
+  top:50%;
+  margin-top: -30px;
+  width:25px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+  /*border: 1px solid #f00;*/
+}
+
+#prev{
+  margin-left: 20px;
+  
+  &:before {
+    position: absolute;
+    content: "";
+    width:2px;
+    height:25px;
+    background: #fff;
+    bottom:16px;
+    transform: rotate(45deg);
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    width:2px;
+    height:25px;
+    background: #fff;
+    top:16px;
+    transform: rotate(-45deg);
+  }
+  &:before, &:after {
+    left: 10px;
+  }
+}
+#next{
+  right: 20px;
+  &:before, &:after{
+    right: 10px;
+  }
+  &:before{
+    position: absolute;
+    content: "";
+    width:2px;
+    height:25px;
+    background-color: rgba(255,255,255,0.8);
+    bottom:16px;
+    transform: rotate(-45deg);
+  }
+  &:after{
+    position: absolute;
+    content: "";
+    width:2px;
+    height:25px;
+    background: rgba(255,255,255,0.8);
+    top:16px;
+    transform: rotate(45deg);
+  }  
+}
+
+#prev:before:hover, #prev:after:hover, #next:before:hover, #next:after:hover{
+  background-color: rgba(255,255,255,1.0);
+}
+
+
+
