@@ -49,9 +49,14 @@
             }
             overlay.classList.add("show-menu");            
         });
-        closeMenu.addEventListener("click", function () {                       
-            //overlay.classList.add("hide-menu");            
+        closeMenu.addEventListener("click", function () {  
             overlay.classList.add("hide-menu");
+            if (overlay.classList.contains('show-menu')) {                
+                setTimeout(function(){
+                    overlay.classList.remove("show-menu", "hide-menu");
+                }, 1001);
+            }
+            
         });
 
     </script>
