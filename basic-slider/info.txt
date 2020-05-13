@@ -1,4 +1,7 @@
 This is a basic javascript slider
 
+Auto Fade Slider
+https://www.youtube.com/watch?v=wWWNrANNO1k
+
 For Carousel:
 https://www.youtube.com/watch?v=rTB-UNl_B_Y
