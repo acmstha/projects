@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Fade Animation wih Carousel</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="prev"></div>
+    <div id="next"></div>
+    <div id="slider">
+        <div class="slide slide1 active">
+            <div class="title">Slide 1</div>
+            <span>Hi there!</span>
+        </div>
+        <div class="slide slide2">
+            <div class="title">Slide 2</div>
+            <span>This is banner animation</span>
+        </div>
+        <div class="slide slide3">
+            <div class="title">Slide 3</div>
+            <span>Auto Animation with Carousel</span>
+        </div>
+    </div>
+    <div id="carousel-indicator">
+        <ul>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!--script src="slider.js" type="text/javascript"></script-->
+    <script>
+        let sliderImages = document.querySelectorAll(".slide"),
+        prev = document.querySelector("#prev"),
+        next = document.querySelector("#next"),
+        carousel = document.querySelectorAll("#carousel-indicator ul li"),
+        current = 0,
+        auto = true,
+        timeInterval = 6000,
+        slideInterval;
+
+    //RESET SLIDES
+    function reset(){
+        //search for slide with class active
+        active = document.querySelector(".active");
+
+        //remove class active from the active slide
+        active.classList.remove("active");
+
+        //search for carousel indicator with class current
+        current = document.querySelector(".current");
+
+        //remove class current from the current indicator
+        current.classList.remove("current");
+        
+    }
+
+    //CLEAR CLASS AFTER SLIDE GETS ACTIVE
+    function clearActiveClass(){
+        setTimeout(function () {
+            active.classList.remove("active");
+            current.classList.remove("current");
+        });
+    }
+
+    //NEXT SLIDE FUNCTION
+    function nextSlide() {
+        reset();
+        //add class active if it has next sibling
+        if (active.nextElementSibling, current.nextElementSibling) {
+            active.nextElementSibling.classList.add("active");
+            current.nextElementSibling.classList.add("current");
+        } else {
+            //if it doesn't have sibling add class to first slide
+            sliderImages[0].classList.add("active");
+            carousel[0].classList.add("current");
+        }
+        clearActiveClass();        
+    }
+
+    //NEXT BUTTON ACTION
+    next.addEventListener("click", function () {
+        nextSlide();
+        if (auto) {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, timeInterval);
+        }
+    });
+
+
+    //PREVIOUS SLIDE FUNCTION
+    function prevSlide() {
+        reset();
+        //add class active if it has previous sibling
+        if (active.previousElementSibling, current.previousElementSibling) {
+            active.previousElementSibling.classList.add("active");
+            current.previousElementSibling.classList.add("current");
+        } else {
+            //if it doesn't have sibling add class to last slide
+            sliderImages[sliderImages.length - 1].classList.add("active");
+            carousel[carousel.length - 1].classList.add("current");
+        }
+        clearActiveClass(); 
+    }
+
+    //PREVIOUS BUTTON ACTION
+    prev.addEventListener("click", function () {
+        prevSlide();
+        if (auto) {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, timeInterval);
+        }
+    });
+
+    //AUTO SLIDE
+    if (auto) {
+        slideInterval = setInterval(nextSlide, timeInterval);        
+    }
+
+    //CAROUSEL
+    carousel.forEach(function(indicator, index){
+        indicator.addEventListener("click", function(){
+            //console.log(index);   
+            reset();
+            //sliderImages.classList.add("active");
+            indicator.classList.add("current");                    
+            clearActiveClass();
+        }); 
+    });
+    
+
+    
+    </script>
+</body>
+
+</html>
