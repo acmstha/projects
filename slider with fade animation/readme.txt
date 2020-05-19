@@ -3,3 +3,6 @@ This is a basic slide with fade animation. There are two examples: one with caro
 To be fixed
 -----------------------
 When clicked on indicators, it should hit the targeted corresponding slide.
+
+sliderImages[index].classList.add("active");
+carousel[index].classList.add("current");
