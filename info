@@ -62,17 +62,11 @@ Steps:
 4. git commit -m "add test.txt"
 5. git push origin master
 
-Source:
-https://www.youtube.com/watch?v=h1e8oC7g0
 
 
 /*-----------------------DOWNLOAD FROM GIT TO LOCAL-----------------------*/
 git clone https://github.com/your/repository
 
-
-
-/*--CSS SLIDE MENU--*/
-https://www.youtube.com/watch?v=gXkqy0b4M5g
 
 
 
