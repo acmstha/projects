@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  font-weight: 200;
+}
+
+#slide_row {
+  background: #ff9797;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#slide_row #slide_container {
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+}
+
+#slide_row #slide_container #slider {
+  width: 100%;
+  height: 50vh;
+  margin: 0 auto;
+  position: relative;
+  /*background: #000;
+      overflow: hidden;*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: transform .4s ease-in-out;
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+}
+
+#slide_row #slide_container #slider .slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  color: #fff;
+  height: 50vh;
+  width: 100%;
+}
+
+#slide_row #slide_container #slider .slide .title {
+  font-size: 2rem;
+  color: #424242;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 0;
+}
+
+#slide_row #slide_container #slider .slide span {
+  font-size: 0.9em;
+  font-weight: 200;
+  color: #424242;
+  opacity: 0;
+}
+
+#slide_row #slide_container #slider .slide.active {
+  opacity: 1 !important;
+}
+
+#slide_row #slide_container #slider .slide.active .title {
+  -webkit-animation: slideUp 0.2s ease-in-out .5s forwards;
+  animation: slideUp 0.2s ease-in-out .5s forwards;
+}
+
+#slide_row #slide_container #slider .slide.active span {
+  -webkit-animation: slideUp 0.2s ease-in-out 1s forwards;
+  animation: slideUp 0.2s ease-in-out 1s forwards;
+}
+
+#slide_row #slide_container #slider .slide1 {
+  background-image: -webkit-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fad0c4), to(#ffd1ff));
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+#slide_row #slide_container #slider .slide2 {
+  background-image: -webkit-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fdcbf1), color-stop(1%, #fdcbf1), to(#e6dee9));
+  background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+}
+
+#slide_row #slide_container #slider .slide3 {
+  background-image: -webkit-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*.active {
+  z-index: 1;
+  opacity: 1 !important;
+}*/
+/*---CONTROL BUTTONS--*/
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  width: 25px;
+  height: 40px;
+  z-index: 2;
+  opacity: 0.5;
+  cursor: pointer;
+  -webkit-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+#prev:hover, #next:hover {
+  opacity: 1;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+#prev:before, #prev:after {
+  left: 10px;
+}
+
+#prev:before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 25px;
+  background: #424242;
+  bottom: 16px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#prev:after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 25px;
+  background: #424242;
+  top: 16px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#next:before, #next:after {
+  right: 10px;
+}
+
+#next:before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 16px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#next:after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.8);
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#prev:before:hover, #prev:after:hover, #next:before:hover, #next:after:hover {
+  background-color: white;
+}
+
+/*----CAROUSEL----*/
+#carousel-indicator {
+  width: 100%;
+  position: absolute;
+  bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#carousel-indicator ul {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  margin: 0 auto;
+}
+
+#carousel-indicator ul li {
+  list-style: none;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #424242;
+  border-radius: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+  -webkit-transition: opacity .2s ease-in-out, background .2s ease-in-out;
+  transition: opacity .2s ease-in-out, background .2s ease-in-out;
+}
+
+#carousel-indicator ul li:hover {
+  opacity: 1;
+  background: #424242;
+}
+
+#carousel-indicator ul li.current {
+  opacity: 1;
+  background: #424242 !important;
+}
+/*# sourceMappingURL=style.css.map */
